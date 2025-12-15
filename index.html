@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 4th Anniversary | Our Love Story</title>
+    <meta name="description"
+        content="Celebrating 4 beautiful years of love, laughter, and endless memories together." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --background: hsl(30, 30%, 98%);
+            --foreground: hsl(350, 20%, 20%);
+            --card: hsl(30, 25%, 96%);
+            --primary: hsl(350, 45%, 55%);
+            --primary-foreground: hsl(30, 30%, 98%);
+            --secondary: hsl(30, 35%, 92%);
+            --muted-foreground: hsl(350, 15%, 45%);
+            --border: hsl(30, 25%, 88%);
+            --rose-gold: hsl(15, 45%, 70%);
+            --blush: hsl(350, 40%, 90%);
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--background) 0%, var(--blush) 100%);
+        }
+
+        .hero-bg-circle-1 {
+            position: absolute;
+            top: 5rem;
+            left: 2.5rem;
+            width: 16rem;
+            height: 16rem;
+            background: hsla(350, 45%, 55%, 0.05);
+            border-radius: 50%;
+            filter: blur(48px);
+        }
+
+        .hero-bg-circle-2 {
+            position: absolute;
+            bottom: 5rem;
+            right: 2.5rem;
+            width: 24rem;
+            height: 24rem;
+            background: hsla(15, 45%, 70%, 0.1);
+            border-radius: 50%;
+            filter: blur(48px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 1rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .hero-heart {
+            width: 48px;
+            height: 48px;
+            color: var(--primary);
+            fill: var(--primary);
+            margin: 0 auto 2rem;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            color: var(--muted-foreground);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: 500;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            color: var(--muted-foreground);
+        }
+
+        .hero-date-line {
+            height: 1px;
+            width: 4rem;
+            background: var(--border);
+        }
+
+        .hero-message {
+            font-family: var(--font-heading);
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: hsla(350, 20%, 20%, 0.8);
+            max-width: 42rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hero-message span {
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator-inner {
+            width: 1.5rem;
+            height: 2.5rem;
+            border: 2px solid hsla(350, 45%, 55%, 0.3);
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            padding-top: 0.5rem;
+        }
+
+        .scroll-indicator-dot {
+            width: 0.25rem;
+            height: 0.75rem;
+            background: hsla(350, 45%, 55%, 0.5);
+            border-radius: 9999px;
+        }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            opacity: 0.2;
+            color: var(--primary);
+            fill: var(--primary);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 6rem 1rem;
+            background: hsla(30, 35%, 92%, 0.3);
+        }
+
+        .container {
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--foreground);
+        }
+
+        .timeline-list {
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            padding-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 1.5rem;
+            top: 4rem;
+            width: 1px;
+            height: calc(100% - 4rem);
+            background: linear-gradient(to bottom, hsla(350, 45%, 55%, 0.3), transparent);
+        }
+
+        .timeline-icon {
+            position: relative;
+            z-index: 10;
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: hsla(350, 45%, 55%, 0.1);
+            border: 1px solid hsla(350, 45%, 55%, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.25rem;
+        }
+
+        .timeline-year {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: hsla(350, 45%, 55%, 0.7);
+            font-style: italic;
+        }
+
+        .timeline-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--foreground);
+            margin: 0.25rem 0 0.75rem;
+        }
+
+        .timeline-desc {
+            color: var(--muted-foreground);
+            line-height: 1.7;
+        }
+
+        /* Memories Section */
+        .memories {
+            padding: 6rem 1rem;
+            background: var(--background);
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--secondary) 50%, hsla(350, 45%, 88%, 1) 100%);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.02);
+        }
+
+        .memory-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.3;
+            background-image: radial-gradient(circle at 50% 50%, hsla(350, 45%, 55%, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .memory-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-icon-wrapper {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background: hsla(350, 45%, 55%, 0.1);
+            border: 1px solid hsla(350, 45%, 55%, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover .memory-icon {
+            transform: scale(1.1);
+        }
+
+        .memory-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: hsla(350, 45%, 55%, 0.5);
+        }
+
+        .memory-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, hsla(350, 20%, 20%, 0.8), hsla(350, 20%, 20%, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .memory-card:hover .memory-overlay {
+            opacity: 1;
+        }
+
+        .memory-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-foreground);
+            margin-bottom: 0.25rem;
+        }
+
+        .memory-desc {
+            font-size: 0.875rem;
+            color: hsla(30, 30%, 98%, 0.8);
+        }
+
+        .memories-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--muted-foreground);
+            font-style: italic;
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            padding: 6rem 1rem;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--secondary) 50%, hsla(350, 45%, 88%, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8rem;
+            background: linear-gradient(to bottom, var(--background), transparent);
+        }
+
+        .love-letter::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8rem;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .love-letter-content {
+            position: relative;
+            z-index: 10;
+            max-width: 48rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote-icon {
+            width: 3rem;
+            height: 3rem;
+            color: hsla(350, 45%, 55%, 0.3);
+            margin: 0 auto 2rem;
+            transform: rotate(180deg);
+        }
+
+        .letter-greeting {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .letter-paragraph {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: hsla(350, 20%, 20%, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .letter-signature {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary);
+            font-style: italic;
+            margin-top: 2rem;
+        }
+
+        .letter-heart {
+            margin-top: 3rem;
+        }
+
+        .letter-heart svg {
+            width: 2rem;
+            height: 2rem;
+            color: var(--primary);
+            fill: var(--primary);
+            animation: pulseSoft 3s ease-in-out infinite;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 1rem;
+            background: var(--background);
+            text-align: center;
+        }
+
+        .footer-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-line {
+            height: 1px;
+            width: 3rem;
+            background: var(--border);
+        }
+
+        .footer-heart svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+            fill: var(--primary);
+        }
+
+        .footer-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--foreground);
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--muted-foreground);
+        }
+
+        .footer-infinity {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 4rem);
+            color: hsla(350, 45%, 55%, 0.2);
+            margin-top: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.1);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.1);
+            }
+
+            70% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .timeline-icon {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            .timeline-icon svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+            .timeline-item {
+                gap: 2.5rem;
+            }
+
+            .timeline-line {
+                left: 2rem;
+            }
+
+            .timeline-year {
+                font-size: 1.75rem;
+            }
+
+            .timeline-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating Hearts -->
+        <div class="floating-hearts">
+            <svg class="floating-heart"
+                style="left: 10%; animation: floatUp 8s ease-in-out infinite; animation-delay: 0s;" width="16"
+                height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 20%; animation: floatUp 10s ease-in-out infinite; animation-delay: 1s;" width="12"
+                height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 35%; animation: floatUp 7s ease-in-out infinite; animation-delay: 2s;" width="20"
+                height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 50%; animation: floatUp 9s ease-in-out infinite; animation-delay: 0.5s;" width="14"
+                height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 65%; animation: floatUp 8s ease-in-out infinite; animation-delay: 1.5s;" width="18"
+                height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 80%; animation: floatUp 11s ease-in-out infinite; animation-delay: 2.5s;" width="10"
+                height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <svg class="floating-heart"
+                style="left: 90%; animation: floatUp 9s ease-in-out infinite; animation-delay: 0.8s;" width="16"
+                height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+        </div>
+
+        <div class="hero-bg-circle-1"></div>
+        <div class="hero-bg-circle-2"></div>
+
+        <div class="hero-content">
+            <svg class="hero-heart" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+
+            <p class="hero-subtitle">Celebrating</p>
+            <h1 class="hero-title">4 Years</h1>
+            <p class="hero-tagline">of Us</p>
+
+            <div class="hero-date">
+                <div class="hero-date-line"></div>
+                <span>December 15, 2021 — Forever</span>
+                <div class="hero-date-line"></div>
+            </div>
+
+            <p class="hero-message">
+                To my love, my best friend, my everything — <br>
+                <span>Thank you for the most beautiful years of my life.</span>
+            </p>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-indicator-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Our Journey</p>
+                <h2 class="section-title">Through The Years</h2>
+            </div>
+
+            <div class="timeline-list">
+                <!-- 2021 -->
+                <div class="timeline-item">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                            <path d="M5 3v4" />
+                            <path d="M19 17v4" />
+                            <path d="M3 5h4" />
+                            <path d="M17 19h4" />
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2021</span>
+                        <h3 class="timeline-title">Where It All Began</h3>
+                        <p class="timeline-desc">The moment our paths crossed and everything changed forever. One look,
+                            one conversation, and I knew you were special.</p>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="timeline-item">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2022</span>
+                        <h3 class="timeline-title">First Adventures</h3>
+                        <p class="timeline-desc">Our first year together — full of laughter, discoveries, and falling
+                            deeper in love with every passing day.</p>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-item">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3 class="timeline-title">Growing Together</h3>
+                        <p class="timeline-desc">Through every challenge and every joy, we became stronger. You are my
+                            partner in everything.</p>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3 class="timeline-title">Still Choosing You</h3>
+                        <p class="timeline-desc">Four years later, and I fall in love with you all over again, every
+                            single day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section class="memories">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Moments to Remember</p>
+                <h2 class="section-title">Our Favorite Memories</h2>
+            </div>
+
+            <div class="memories-grid">
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_1_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 1">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Our First Date</h3>
+                            <p class="memory-desc">Nervous butterflies and endless smiles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_2_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 2">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Sunset Adventures</h3>
+                            <p class="memory-desc">Chasing golden hours together</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_3_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 3">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Cozy Nights In</h3>
+                            <p class="memory-desc">Movies, laughter, and you</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_4_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 4">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Travel Dreams</h3>
+                            <p class="memory-desc">Exploring the world side by side</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_5_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 5">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Little Moments</h3>
+                            <p class="memory-desc">The everyday magic we create</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <img class="memory-img"
+                        src="https://raw.githubusercontent.com/edzze-09/our-anniversary-website/main/src/photo_6_2025-12-16_00-31-09.jpg"
+                        alt="Our photo 6">
+                    <div class="memory-pattern"></div>
+                    <div class="memory-icon-wrapper">
+                        <div class="memory-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="memory-overlay">
+                        <div>
+                            <h3 class="memory-title">Forever Memories</h3>
+                            <p class="memory-desc">Building our story, frame by frame</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="memories-note">Add your favorite photos to make this truly special ♡</p>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="love-letter">
+        <div class="love-letter-content">
+            <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z" />
+                <path
+                    d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+
+            <p class="letter-greeting">My Dearest Love,</p>
+
+            <p class="letter-paragraph">
+                Four years ago, I never could have imagined how completely you would
+                change my life. Every moment with you is a gift I treasure.
+            </p>
+
+            <p class="letter-paragraph">
+                You are my morning smile, my midnight thoughts, and everything in between.
+                With you, ordinary moments become extraordinary memories.
+            </p>
+
+            <p class="letter-paragraph">
+                Thank you for loving me, for believing in us, and for being exactly who you are.
+                I choose you today, tomorrow, and for all the years to come.
+            </p>
+
+            <p class="letter-signature">Forever Yours</p>
+
+            <div class="letter-heart">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-divider">
+            <div class="footer-line"></div>
+            <div class="footer-heart">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+            </div>
+            <div class="footer-line"></div>
+        </div>
+
+        <h2 class="footer-title">Happy 4th Anniversary</h2>
+        <p class="footer-tagline">Here's to forever and always</p>
+        <p class="footer-infinity">∞</p>
+    </footer>
+
+</body>
+
+</html>
